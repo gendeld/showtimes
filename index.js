@@ -59,7 +59,7 @@ Showtimes.prototype.getTheaters = function (cb) {
       'User-Agent': self.userAgent,
       'gzip': true
     },
-    encoding: 'utf8'
+    encoding: 'win1255'
   };
 
   request(options, function (error, response, body) {
@@ -74,7 +74,7 @@ Showtimes.prototype.getTheaters = function (cb) {
     }
 
     if (self.lang == 'he') {
-      body = iconv.decode(body,'win1255');
+      body = iconv.decode(body,'utf-8');
     }
     
     var $ = cheerio.load(body);
