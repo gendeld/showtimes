@@ -1,5 +1,6 @@
 'use strict';
 
+var encoding = require("encoding");
 var request = require('request');
 var cheerio = require('cheerio');
 var qs = require('querystring');
