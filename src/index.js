@@ -536,7 +536,7 @@ class showtimes {
         'User-Agent': this.userAgent,
         'gzip': true
       },
-      encoding: 'binary'
+      encoding: 'utf8'
     }
 
     request(options, (error, response, body) => {
