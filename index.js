@@ -74,7 +74,7 @@ Showtimes.prototype.getTheaters = function (cb) {
     }
 
     if (self.lang == 'he') {
-      body = iconv.decode(body,'utf-8');
+      body = iconv.decode(body,'win1255');
     }
     
     var $ = cheerio.load(body);
