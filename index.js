@@ -59,7 +59,7 @@ Showtimes.prototype.getTheaters = function (cb) {
       'User-Agent': self.userAgent,
       'gzip': true
     },
-    encoding: 'binary'
+    encoding: 'utf8'
   };
 
   request(options, function (error, response, body) {
