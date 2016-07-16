@@ -50,7 +50,7 @@ Showtimes.prototype.getTheaters = function (cb) {
   var options = {
     url: self.baseUrl,
     qs: {
-      hl: (typeof self.lang !== 'undefined') ? self.lang : "en",
+      hl: (typeof self.lang !== 'undefined') ? self.lang : "he",
       near: self.location,
       date: (typeof self.date !== 'undefined') ? self.date : 0,
       start: ((page - 1) * 10)
@@ -73,8 +73,8 @@ Showtimes.prototype.getTheaters = function (cb) {
       return;
     }
 
-    if (self.lang == 'tr') {
-      body = iconv.decode(body,'latin5');
+    if (self.lang == 'he') {
+      body = iconv.decode(body,'utf-8');
     }
     
     var $ = cheerio.load(body);
