@@ -147,8 +147,8 @@ var showtimes = function () {
 
       var api = this;
       this._request({ sort: 1, q: query }, cb, function (response) {
-        if (api.lang === 'tr') {
-          response = iconv.decode(response, 'latin5');
+        if (api.lang === 'he') {
+          response = encoding.convert(response, 'UTF8', 'CP1255');
         }
 
         var $ = cheerio.load(response);
