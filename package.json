@@ -28,7 +28,7 @@
     "url": "https://github.com/erunion/showtimes/issues",
     "email": "jon@ursenba.ch"
   },
-  "main": "src/index.jsx",
+  "main": "src/index.js",
   "scripts": {
     "test": "tap test",
     "lint": "standard src/**.js test/**.js"
