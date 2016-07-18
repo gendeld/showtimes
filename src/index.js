@@ -580,7 +580,7 @@ var showtimes = function () {
           'User-Agent': this.userAgent,
           'gzip': true
         },
-        encoding: 'utf8'
+        encoding: 'binary'
       };
 
       request(options, function (error, response, body) {
