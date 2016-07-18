@@ -1,5 +1,6 @@
 'use strict'
 
+var encoding = require("encoding")
 var request = require('request')
 var cheerio = require('cheerio')
 var qs = require('querystring')
@@ -24,7 +25,7 @@ class showtimes {
     }
 
     this.date = typeof options.date !== 'undefined' ? options.date : 0
-    this.lang = typeof options.lang !== 'undefined' ? options.lang : 'en'
+    this.lang = typeof options.lang !== 'undefined' ? options.lang : 'he'
     this.pageLimit = typeof options.pageLimit !== 'undefined' ? options.pageLimit : 999
   }
 
@@ -51,8 +52,8 @@ class showtimes {
 
     var api = this
     this._request({q: query}, cb, (response) => {
-      if (api.lang === 'tr') {
-        response = iconv.decode(response, 'latin5')
+      if (api.lang === 'he') {
+        response = encoding.convert(response,'UTF8','CP1255');
       }
 
       var $ = cheerio.load(response)
